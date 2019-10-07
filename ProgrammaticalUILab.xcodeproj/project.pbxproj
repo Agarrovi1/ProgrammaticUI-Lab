@@ -14,6 +14,8 @@
 		4D4B0749234BB61600FD8806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D4B0748234BB61600FD8806 /* Assets.xcassets */; };
 		4D4B074C234BB61600FD8806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4B074A234BB61600FD8806 /* LaunchScreen.storyboard */; };
 		4D4B0757234BB61600FD8806 /* ProgrammaticalUILabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B0756234BB61600FD8806 /* ProgrammaticalUILabTests.swift */; };
+		4D4B0765234BB77F00FD8806 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B0764234BB77F00FD8806 /* Colors.swift */; };
+		4D4B0767234BB7F100FD8806 /* ScoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B0766234BB7F100FD8806 /* ScoreKeeper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		4D4B0752234BB61600FD8806 /* ProgrammaticalUILabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgrammaticalUILabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4B0756234BB61600FD8806 /* ProgrammaticalUILabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticalUILabTests.swift; sourceTree = "<group>"; };
 		4D4B0758234BB61600FD8806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D4B0764234BB77F00FD8806 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4D4B0766234BB7F100FD8806 /* ScoreKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeeper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 		4D4B0762234BB73A00FD8806 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4D4B0764234BB77F00FD8806 /* Colors.swift */,
+				4D4B0766234BB7F100FD8806 /* ScoreKeeper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4B0744234BB61300FD8806 /* ViewController.swift in Sources */,
+				4D4B0767234BB7F100FD8806 /* ScoreKeeper.swift in Sources */,
+				4D4B0765234BB77F00FD8806 /* Colors.swift in Sources */,
 				4D4B0740234BB61300FD8806 /* AppDelegate.swift in Sources */,
 				4D4B0742234BB61300FD8806 /* SceneDelegate.swift in Sources */,
 			);
