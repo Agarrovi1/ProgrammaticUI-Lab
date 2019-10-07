@@ -82,9 +82,68 @@ class ViewController: UIViewController {
         colorView.translatesAutoresizingMaskIntoConstraints = false
     }
 
+    private func addConstraints() {
+        let margins = self.view.layoutMarginsGuide
+        
+        scoreLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 90).isActive = true
+        scoreLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50).isActive = true
+        scoreLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        
+        highScoreLabel.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor, constant: 10).isActive = true
+        highScoreLabel.leadingAnchor.constraint(equalTo: self.scoreLabel.leadingAnchor).isActive = true
+        highScoreLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        
+        colorView.topAnchor.constraint(equalTo: highScoreLabel.bottomAnchor, constant: 30).isActive = true
+        colorView.leadingAnchor.constraint(equalTo: highScoreLabel.leadingAnchor, constant: 20).isActive = true
+        colorView.trailingAnchor.constraint(equalTo: margins.trailingAnchor,constant: -70).isActive = true
+        
+        
+        greenButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        greenButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        greenButton.topAnchor.constraint(equalTo: colorView.bottomAnchor, constant: 50).isActive = true
+        greenButton.leadingAnchor.constraint(equalTo: redButton.trailingAnchor, constant: 20).isActive = true
+        
+        redButton.centerYAnchor.constraint(equalTo: greenButton.centerYAnchor).isActive = true
+        redButton.leadingAnchor.constraint(equalTo: scoreLabel.leadingAnchor).isActive = true
+        redButton.widthAnchor.constraint(equalTo: greenButton.widthAnchor).isActive = true
+        
+        blueButton.centerYAnchor.constraint(equalTo: greenButton.centerYAnchor).isActive = true
+        blueButton.leadingAnchor.constraint(equalTo: greenButton.trailingAnchor, constant: 20).isActive = true
+        blueButton.widthAnchor.constraint(equalTo: greenButton.widthAnchor).isActive = true
+        
+        infoLabel.topAnchor.constraint(equalTo: greenButton.bottomAnchor, constant: 20).isActive = true
+        infoLabel.centerXAnchor.constraint(equalTo: greenButton.centerXAnchor).isActive = true
+        infoLabel.leadingAnchor.constraint(equalTo: redButton.leadingAnchor).isActive = true
+        infoLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+    }
+    
+    @objc func buttonPressed(sender: UIButton) {
+        let correctColor = color.findTheGreatest()
+        if sender.titleLabel?.text == correctColor {
+            score.youWonScore()
+            infoLabel.text = "Correct!"
+        } else {
+            score.youLostScore()
+            infoLabel.text = "Incorrect!"
+        }
+        updateScoreLabels()
+        updateNewColorIntoView()
+    }
+    private func updateScoreLabels() {
+        scoreLabel.text = "Score: \(score.score)"
+        highScoreLabel.text = "High Score: \(score.highScore)"
+    }
+    private func updateNewColorIntoView() {
+        color = Color.generateRandomRGBValues()
+        colorView.backgroundColor = color.changeToUIColor()
+    }
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+         setupSubViews()
+        addConstraints()
+        self.view.backgroundColor = .white
     }
 
 
